@@ -11,14 +11,35 @@ type AccordionItem = {
 
 type StationFeature = {
   label: string
+  description: string
 }
 
 const STATION_FEATURES: StationFeature[] = [
-  { label: "Возможна выдача в нерабочие часы" },
-  { label: "Возврат в нерабочие часы" },
-  { label: "Офис в терминале" },
-  { label: "Встреча в аэропорту" },
-  { label: "Трансфер до офиса" },
+  {
+    label: "Возможна выдача в нерабочие часы",
+    description:
+      "Забрать автомобиль можно и после закрытия стойки — заранее согласуйте время с оператором, взимается дополнительный сбор за внеурочную выдачу.",
+  },
+  {
+    label: "Возврат в нерабочие часы",
+    description:
+      "Верните автомобиль в любое время, даже если офис уже закрыт — оставьте ключи в специальном боксе на парковке, это бесплатно.",
+  },
+  {
+    label: "Офис в терминале",
+    description:
+      "Стойка проката расположена прямо в здании терминала — не нужно ехать в отдельный офис или пользоваться шаттлом.",
+  },
+  {
+    label: "Встреча в аэропорту",
+    description:
+      "Сотрудник встретит вас с табличкой у выхода из зоны прилета и проведет до стойки оформления — услугу нужно заказать заранее.",
+  },
+  {
+    label: "Трансфер до офиса",
+    description:
+      "Если офис находится за пределами терминала, для вас организуют бесплатный трансфер на автомобиле компании.",
+  },
 ]
 
 const ACCORDION_ITEMS: AccordionItem[] = [
@@ -296,6 +317,18 @@ export default function StationInformation() {
                 <div className="feature-chip" key={feature.label}>
                   <span className="feature-chip-dot" aria-hidden="true" />
                   <span className="feature-chip-label">{feature.label}</span>
+                  <div className="feature-chip-info">
+                    <button
+                      type="button"
+                      className="feature-chip-info-trigger"
+                      aria-label={`Подробнее: ${feature.label}`}
+                    >
+                      ?
+                    </button>
+                    <div className="feature-chip-tooltip" role="tooltip">
+                      {feature.description}
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>

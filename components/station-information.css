@@ -259,6 +259,7 @@
 }
 
 .feature-chip-label {
+    flex-grow: 1;
     font-size: 13px;
     font-weight: 700;
     color: var(--text-main);
@@ -268,6 +269,87 @@
     -webkit-line-clamp: 2;
     overflow: hidden;
     text-align: left;
+}
+
+.feature-chip-info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.feature-chip-info-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border-color);
+    background: #ffffff;
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    padding: 0;
+    cursor: help;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-chip-info-trigger:hover,
+.feature-chip-info-trigger:focus-visible {
+    background: var(--rm-orange);
+    border-color: var(--rm-orange);
+    color: #ffffff;
+    outline: none;
+}
+
+.feature-chip-tooltip {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    right: -12px;
+    transform: translateY(4px);
+    width: 240px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: var(--text-main);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    box-shadow: 0 12px 24px -8px rgba(15, 23, 42, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+    z-index: 20;
+}
+
+.feature-chip-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 16px;
+    border: 6px solid transparent;
+    border-top-color: var(--text-main);
+}
+
+.feature-chip-info-trigger:hover + .feature-chip-tooltip,
+.feature-chip-info-trigger:focus-visible + .feature-chip-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.feature-chip:first-child .feature-chip-tooltip {
+    right: auto;
+    left: -12px;
+}
+
+.feature-chip:first-child .feature-chip-tooltip::after {
+    right: auto;
+    left: 16px;
 }
 
 .phone-messenger-row {
