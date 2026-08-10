@@ -143,22 +143,44 @@
     color: #334155;
 }
 
-.station-hours-value {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 22px;
-    font-weight: 800;
-    color: var(--text-main);
-    letter-spacing: -0.01em;
+.station-hours-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 16px;
+    width: 100%;
 }
 
-.station-hours-dash {
-    width: 12px;
-    height: 2px;
-    border-radius: 2px;
-    background: var(--text-muted);
-    flex-shrink: 0;
+.station-hours-column {
+    display: grid;
+    gap: 3px;
+    align-content: start;
+}
+
+.station-hours-row {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    align-items: center;
+    min-height: 18px;
+    padding: 1px 0;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+.station-hours-row:last-child {
+    border-bottom: 0;
+}
+
+.station-hours-day {
+    color: var(--text-main);
+    font-weight: 800;
+    text-transform: lowercase;
+}
+
+.station-hours-time {
+    color: var(--text-main);
+    font-weight: 400;
+    letter-spacing: 0.01em;
 }
 
 .maps-row {
