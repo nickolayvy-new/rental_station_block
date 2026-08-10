@@ -44,7 +44,7 @@ const STATION_FEATURES: StationFeature[] = [
 
 const ACCORDION_ITEMS: AccordionItem[] = [
   {
-    title: "Расположение офиса в аэропорту",
+    title: "Как найти станцию и получить автомобиль?",
     description: (
       <>
         Наша стойка находится в <strong>Терминале C</strong>. После выхода из
@@ -53,17 +53,17 @@ const ACCORDION_ITEMS: AccordionItem[] = [
     ),
     gallery: [
       {
-        src: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=400",
+        src: "/station/arrival-1.jpg",
         alt: "Выход",
         caption: "Шаг 1. Выход в зал прилета",
       },
       {
-        src: "https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?w=400",
+        src: "/station/arrival-2.jpg",
         alt: "Указатели",
         caption: "Шаг 2. Следуйте по указателям «Прокат авто»",
       },
       {
-        src: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400",
+        src: "/station/arrival-3.jpg",
         alt: "Стойка",
         caption: "Шаг 3. Оформление договора на стойке",
       },
@@ -80,17 +80,17 @@ const ACCORDION_ITEMS: AccordionItem[] = [
     ),
     gallery: [
       {
-        src: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=400",
+        src: "/station/return-1.jpg",
         alt: "Паркинг",
         caption: "Шаг 1. Въезд на крытый паркинг С",
       },
       {
-        src: "https://images.unsplash.com/photo-1542282088-fe8426682b8f?w=400",
+        src: "/station/return-2.jpg",
         alt: "Место",
         caption: "Шаг 2. Парковка на брендированных местах",
       },
       {
-        src: "https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=400",
+        src: "/station/return-3.jpg",
         alt: "Бокс",
         caption: "Шаг 3. Возврат ключей сотруднику или в бокс",
       },
