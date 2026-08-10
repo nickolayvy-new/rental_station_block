@@ -105,6 +105,25 @@ export default function StationInformation() {
               </h2>
             </div>
           </div>
+
+          <div className="station-hours-badge">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              />
+            </svg>
+            <span>
+              Ежедневно <strong>09:00 — 21:00</strong>
+            </span>
+          </div>
         </div>
 
         <div className="station-content">
@@ -162,30 +181,6 @@ export default function StationInformation() {
                   Google
                 </a>
               </div>
-            </div>
-          </div>
-
-          <div className="station-section order-features">
-            <svg
-              className="section-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              />
-            </svg>
-            <div className="section-body">
-              <h3>Режим работы</h3>
-              <p className="station-time">
-                Каждый день: <strong>09:00 — 21:00</strong>
-              </p>
             </div>
           </div>
 
