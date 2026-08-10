@@ -11,43 +11,14 @@ type AccordionItem = {
 
 type StationFeature = {
   label: string
-  icon: React.ReactNode
 }
 
 const STATION_FEATURES: StationFeature[] = [
-  {
-    label: "Возврат в нерабочие часы",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
-        <circle cx="12" cy="12" r="9" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M12 7v5l3.5 2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    label: "Встреча в аэропорту",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
-        <path
-          d="M12 21s-6-5.686-6-10a6 6 0 1 1 12 0c0 4.314-6 10-6 10Z"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <circle cx="12" cy="11" r="2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    label: "Шаттл до офиса локации",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
-        <rect x="3" y="6" width="18" height="11" rx="2" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M3 12h18" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="7.5" cy="19.5" r="1.5" />
-        <circle cx="16.5" cy="19.5" r="1.5" />
-      </svg>
-    ),
-  },
+  { label: "Возможна выдача в нерабочие часы" },
+  { label: "Возврат в нерабочие часы" },
+  { label: "Офис в терминале" },
+  { label: "Встреча в аэропорту" },
+  { label: "Трансфер до офиса" },
 ]
 
 const ACCORDION_ITEMS: AccordionItem[] = [
@@ -299,11 +270,10 @@ export default function StationInformation() {
           </div>
 
           <div className="features-strip order-features-strip">
-            <h3 className="features-strip-title">Особенности станции</h3>
             <div className="features-strip-list">
               {STATION_FEATURES.map((feature) => (
                 <div className="feature-chip" key={feature.label}>
-                  <span className="feature-chip-icon">{feature.icon}</span>
+                  <span className="feature-chip-dot" aria-hidden="true" />
                   <span className="feature-chip-label">{feature.label}</span>
                 </div>
               ))}
