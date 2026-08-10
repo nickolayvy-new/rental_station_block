@@ -155,7 +155,7 @@ export default function StationInformation() {
                         fill="#ffffff"
                       />
                     </svg>
-                    <span className="sr-only">Yandex Карты</span>
+                    Yandex
                   </a>
                   <a
                     href="https://maps.google.com"
@@ -171,7 +171,7 @@ export default function StationInformation() {
                       />
                       <circle cx="12" cy="10" r="3" fill="#ffffff" />
                     </svg>
-                    <span className="sr-only">Google Maps</span>
+                    Google
                   </a>
                 </div>
               </div>
