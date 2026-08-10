@@ -220,20 +220,31 @@ export default function StationInformation() {
             </div>
             <div className="section-body">
               <div className="station-hours-grid" aria-label="График работы по дням недели">
-                {[
-                  ["пн", "09:00 — 21:00"],
-                  ["вт", "09:00 — 21:00"],
-                  ["ср", "09:00 — 21:00"],
-                  ["чт", "09:00 — 21:00"],
-                  ["пт", "09:00 — 21:00"],
-                  ["сб", "09:00 — 21:00"],
-                  ["вс", "09:00 — 21:00"],
-                ].map(([day, hours]) => (
-                  <div className="station-hours-row" key={day}>
-                    <span className="station-hours-day">{day}:</span>
-                    <span className="station-hours-time">{hours}</span>
-                  </div>
-                ))}
+                <div className="station-hours-column">
+                  {[
+                    ["пн", "09:00 — 21:00"],
+                    ["вт", "09:00 — 21:00"],
+                    ["ср", "09:00 — 21:00"],
+                    ["чт", "09:00 — 21:00"],
+                  ].map(([day, hours]) => (
+                    <div className="station-hours-row" key={day}>
+                      <span className="station-hours-day">{day}:</span>
+                      <span className="station-hours-time">{hours}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="station-hours-column">
+                  {[
+                    ["пт", "09:00 — 21:00"],
+                    ["сб", "09:00 — 21:00"],
+                    ["вс", "09:00 — 21:00"],
+                  ].map(([day, hours]) => (
+                    <div className="station-hours-row" key={day}>
+                      <span className="station-hours-day">{day}:</span>
+                      <span className="station-hours-time">{hours}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

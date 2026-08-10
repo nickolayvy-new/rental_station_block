@@ -145,8 +145,15 @@
 
 .station-hours-grid {
     display: grid;
-    gap: 3px;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 16px;
     width: 100%;
+}
+
+.station-hours-column {
+    display: grid;
+    gap: 3px;
+    align-content: start;
 }
 
 .station-hours-row {
