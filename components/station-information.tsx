@@ -219,12 +219,21 @@ export default function StationInformation() {
               <h3>Режим работы</h3>
             </div>
             <div className="section-body">
-              <p className="station-hours-caption">Ежедневно, без выходных</p>
-              <div className="section-spacer" />
-              <div className="station-hours-value">
-                <span>09:00</span>
-                <span className="station-hours-dash" aria-hidden="true" />
-                <span>21:00</span>
+              <div className="station-hours-grid" aria-label="График работы по дням недели">
+                {[
+                  ["пн", "09:00 — 21:00"],
+                  ["вт", "09:00 — 21:00"],
+                  ["ср", "09:00 — 21:00"],
+                  ["чт", "09:00 — 21:00"],
+                  ["пт", "09:00 — 21:00"],
+                  ["сб", "09:00 — 21:00"],
+                  ["вс", "09:00 — 21:00"],
+                ].map(([day, hours]) => (
+                  <div className="station-hours-row" key={day}>
+                    <span className="station-hours-day">{day}:</span>
+                    <span className="station-hours-time">{hours}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
