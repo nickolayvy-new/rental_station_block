@@ -172,14 +172,14 @@
 }
 
 .station-hours-day {
-    color: var(--text-muted);
-    font-weight: 700;
+    color: var(--text-main);
+    font-weight: 800;
     text-transform: lowercase;
 }
 
 .station-hours-time {
     color: var(--text-main);
-    font-weight: 750;
+    font-weight: 400;
     letter-spacing: 0.01em;
 }
 
