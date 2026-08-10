@@ -138,46 +138,42 @@ export default function StationInformation() {
                 зона прилета
               </p>
               <div className="section-spacer" />
-              <span className="maps-caption">Открыть на карте</span>
-              <div className="maps-buttons">
-                <a
-                  href="https://yandex.ru/maps/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn map-btn"
-                >
-                  <svg
-                    className="map-btn-icon"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
+              <div className="maps-row">
+                <span className="maps-caption">Открыть на карте</span>
+                <div className="maps-buttons">
+                  <a
+                    href="https://yandex.ru/maps/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="map-icon-btn"
+                    title="Yandex Карты"
                   >
-                    <circle cx="12" cy="12" r="12" fill="#FC3F1D" />
-                    <path
-                      d="M13.35 6h-1.24c-2.32 0-3.79 1.2-3.79 3.11 0 1.53.75 2.42 2.03 2.99L8.1 16.6c-.1.24 0 .4.26.4h1.32c.2 0 .3-.06.38-.24l1.4-3.14h1.04v3.14c0 .13.1.24.24.24h1.14c.14 0 .24-.11.24-.24V6.24A.24.24 0 0 0 14.12 6h-.77Zm-.35 6.4h-.75c-1.05 0-1.65-.55-1.65-1.5 0-1.02.62-1.6 1.65-1.6h.75v3.1Z"
-                      fill="#ffffff"
-                    />
-                  </svg>
-                  Yandex
-                </a>
-                <a
-                  href="https://maps.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn map-btn"
-                >
-                  <svg
-                    className="map-btn-icon"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <circle cx="12" cy="12" r="12" fill="#FC3F1D" />
+                      <path
+                        d="M13.35 6h-1.24c-2.32 0-3.79 1.2-3.79 3.11 0 1.53.75 2.42 2.03 2.99L8.1 16.6c-.1.24 0 .4.26.4h1.32c.2 0 .3-.06.38-.24l1.4-3.14h1.04v3.14c0 .13.1.24.24.24h1.14c.14 0 .24-.11.24-.24V6.24A.24.24 0 0 0 14.12 6h-.77Zm-.35 6.4h-.75c-1.05 0-1.65-.55-1.65-1.5 0-1.02.62-1.6 1.65-1.6h.75v3.1Z"
+                        fill="#ffffff"
+                      />
+                    </svg>
+                    <span className="sr-only">Yandex Карты</span>
+                  </a>
+                  <a
+                    href="https://maps.google.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="map-icon-btn"
+                    title="Google Maps"
                   >
-                    <path
-                      d="M12 22s7-6.24 7-12A7 7 0 0 0 5 10c0 5.76 7 12 7 12Z"
-                      fill="#EA4335"
-                    />
-                    <circle cx="12" cy="10" r="3" fill="#ffffff" />
-                  </svg>
-                  Google
-                </a>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M12 22s7-6.24 7-12A7 7 0 0 0 5 10c0 5.76 7 12 7 12Z"
+                        fill="#EA4335"
+                      />
+                      <circle cx="12" cy="10" r="3" fill="#ffffff" />
+                    </svg>
+                    <span className="sr-only">Google Maps</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
