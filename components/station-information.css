@@ -95,59 +95,51 @@
 .station-section {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
     background: var(--bg-light);
     border: 1px solid var(--border-color);
-    border-radius: 18px;
-    padding: 22px;
+    border-radius: 16px;
+    padding: 18px;
     height: 100%;
 }
 
-.section-icon-badge {
+.section-heading {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-    background: var(--rm-orange);
-    color: #ffffff;
+    gap: 10px;
+}
+
+.section-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--rm-orange);
     flex-shrink: 0;
 }
 
-.section-icon-badge--success {
-    background: var(--success-color);
-}
-
-.section-icon-badge svg {
-    width: 21px;
-    height: 21px;
+.section-heading h3 {
+    margin: 0;
+    font-size: 15px;
+    color: var(--text-main);
+    font-weight: 700;
 }
 
 .section-body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
 .section-spacer {
     flex-grow: 1;
 }
 
-.section-body h3 {
-    margin: 0;
-    font-size: 16px;
-    color: var(--text-main);
-    font-weight: 700;
-}
-
 .station-address,
 .station-time,
 .station-hours-caption {
     margin: 0;
-    font-size: 13px;
-    line-height: 1.6;
+    font-size: 12.5px;
+    line-height: 1.5;
     color: #334155;
 }
 
@@ -155,7 +147,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 800;
     color: var(--text-main);
     letter-spacing: -0.01em;
@@ -171,12 +163,12 @@
 
 .maps-caption {
     display: block;
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
     color: var(--text-muted);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .maps-buttons {
@@ -231,15 +223,15 @@
 .feature-chip {
     display: flex;
     align-items: center;
+    gap: 10px;
     flex: 1 1 200px;
     max-width: 280px;
     min-height: 50px;
     max-height: 50px;
-    padding: 12px 18px 12px 16px;
+    padding: 12px 18px;
     border-radius: 10px;
     background: #ffffff;
     border: 1px solid var(--border-color);
-    border-left: 4px solid var(--success-color);
     box-shadow: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -247,9 +239,17 @@
 .feature-chip:hover {
     background: #F0FDF4;
     border-color: #BBF7D0;
-    border-left-color: var(--success-color);
     transform: translateY(-2px);
     box-shadow: 0 8px 16px -6px rgba(22, 163, 74, 0.3);
+}
+
+.feature-chip-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--success-color);
+    box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.15);
+    flex-shrink: 0;
 }
 
 .feature-chip-label {
@@ -268,52 +268,53 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    gap: 10px;
     margin-top: auto;
+    max-width: 220px;
 }
 
 .station-phone {
-    font-size: 14px;
+    font-size: 13.5px;
     font-weight: 800;
     color: var(--text-main);
     text-decoration: none;
-    background: var(--bg-light);
-    padding: 11px 16px;
+    background: #ffffff;
+    padding: 10px 14px;
     border-radius: 12px;
     border: 1px solid var(--border-color);
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     cursor: default;
     width: 100%;
-    justify-content: center;
 }
 
 .messenger-channels {
     display: flex;
     gap: 8px;
     width: 100%;
-    justify-content: space-between;
 }
 
 .messenger-channels .msg-link {
-    flex-grow: 1;
+    flex: 1 1 0;
 }
 
 .msg-link {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 40px;
     height: 40px;
     border-radius: 12px;
-    background: var(--bg-light);
+    background: #ffffff;
     border: 1px solid var(--border-color);
     color: var(--text-main);
     transition: all 0.2s ease;
 }
 
 .msg-link svg {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     fill: currentColor;
 }
 
@@ -455,6 +456,7 @@
     .phone-messenger-row {
         flex-direction: row;
         margin-top: 16px;
+        max-width: none;
     }
     .station-phone {
         width: auto;
@@ -508,15 +510,17 @@
     }
 
     .phone-messenger-row {
-        flex-direction: row;
+        flex-direction: column;
+        align-items: stretch;
         gap: 10px;
         margin-top: 16px;
+        max-width: 260px;
     }
     .station-phone {
-        width: auto;
+        width: 100%;
     }
     .messenger-channels {
-        width: auto;
+        width: 100%;
     }
     /* Галерея в 1 колонку на смартфонах */
     .instruction-gallery {

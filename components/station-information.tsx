@@ -109,12 +109,13 @@ export default function StationInformation() {
 
         <div className="station-content">
           <div className="station-section order-address">
-            <div className="section-icon-badge">
+            <div className="section-heading">
               <svg
+                className="section-icon"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                strokeWidth={2}
+                strokeWidth={1.75}
                 stroke="currentColor"
                 aria-hidden="true"
               >
@@ -129,9 +130,9 @@ export default function StationInformation() {
                   d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
                 />
               </svg>
+              <h3>Адрес станции</h3>
             </div>
             <div className="section-body">
-              <h3>Адрес станции</h3>
               <p className="station-address">
                 141400, Московская обл., г. Химки, Терминал C / Терминал D,
                 зона прилета
@@ -182,12 +183,13 @@ export default function StationInformation() {
           </div>
 
           <div className="station-section order-hours">
-            <div className="section-icon-badge section-icon-badge--success">
+            <div className="section-heading">
               <svg
+                className="section-icon"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                strokeWidth={2}
+                strokeWidth={1.75}
                 stroke="currentColor"
                 aria-hidden="true"
               >
@@ -197,9 +199,9 @@ export default function StationInformation() {
                   d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                 />
               </svg>
+              <h3>Режим работы</h3>
             </div>
             <div className="section-body">
-              <h3>Режим работы</h3>
               <p className="station-hours-caption">Ежедневно, без выходных</p>
               <div className="section-spacer" />
               <div className="station-hours-value">
@@ -211,12 +213,13 @@ export default function StationInformation() {
           </div>
 
           <div className="station-section order-contacts">
-            <div className="section-icon-badge">
+            <div className="section-heading">
               <svg
+                className="section-icon"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                strokeWidth={2}
+                strokeWidth={1.75}
                 stroke="currentColor"
                 aria-hidden="true"
               >
@@ -226,9 +229,9 @@ export default function StationInformation() {
                   d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.635-5.165-3.976-6.8-6.8l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
                 />
               </svg>
+              <h3>Контакты</h3>
             </div>
             <div className="section-body">
-              <h3>Контакты</h3>
               <div className="phone-messenger-row">
                 <span className="station-phone">+7 (495) 123-45-67</span>
 
@@ -295,6 +298,7 @@ export default function StationInformation() {
             <div className="features-strip-list">
               {STATION_FEATURES.map((feature) => (
                 <div className="feature-chip" key={feature.label}>
+                  <span className="feature-chip-dot" aria-hidden="true" />
                   <span className="feature-chip-label">{feature.label}</span>
                 </div>
               ))}
