@@ -9,6 +9,47 @@ type AccordionItem = {
   gallery: { src: string; alt: string; caption: React.ReactNode }[]
 }
 
+type StationFeature = {
+  label: string
+  icon: React.ReactNode
+}
+
+const STATION_FEATURES: StationFeature[] = [
+  {
+    label: "Возврат в нерабочие часы",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+        <circle cx="12" cy="12" r="9" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M12 7v5l3.5 2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    label: "Встреча в аэропорту",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+        <path
+          d="M12 21s-6-5.686-6-10a6 6 0 1 1 12 0c0 4.314-6 10-6 10Z"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <circle cx="12" cy="11" r="2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    label: "Шаттл до офиса локации",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+        <rect x="3" y="6" width="18" height="11" rx="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M3 12h18" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="7.5" cy="19.5" r="1.5" />
+        <circle cx="16.5" cy="19.5" r="1.5" />
+      </svg>
+    ),
+  },
+]
+
 const ACCORDION_ITEMS: AccordionItem[] = [
   {
     title: "Расположение офиса в аэропорту",
@@ -123,6 +164,7 @@ export default function StationInformation() {
                 141400, Московская обл., г. Химки, Терминал C / Терминал D,
                 зона прилета
               </p>
+              <span className="maps-caption">Открыть на карте</span>
               <div className="maps-buttons">
                 <a
                   href="https://yandex.ru/maps/"
@@ -169,24 +211,10 @@ export default function StationInformation() {
               />
             </svg>
             <div className="section-body">
-              <div className="right-column-stack">
-                <div>
-                  <h3>Режим работы</h3>
-                  <p className="station-time">
-                    Каждый день: <strong>09:00 — 21:00</strong>
-                  </p>
-
-                  <div className="features-badges">
-                    <div className="badge-feature">
-                      Возврат в нерабочие часы
-                    </div>
-                    <div className="badge-feature">Встреча в аэропорту</div>
-                    <div className="badge-feature">
-                      Шаттл до офиса локации
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <h3>Режим работы</h3>
+              <p className="station-time">
+                Каждый день: <strong>09:00 — 21:00</strong>
+              </p>
             </div>
           </div>
 
@@ -236,6 +264,29 @@ export default function StationInformation() {
                     </svg>
                     <span className="sr-only">WhatsApp</span>
                   </a>
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="msg-link max"
+                    title="Max"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <rect x="2" y="2" width="20" height="20" rx="6" fill="currentColor" />
+                      <text
+                        x="12"
+                        y="16.5"
+                        textAnchor="middle"
+                        fontSize="11"
+                        fontWeight="700"
+                        fill="#ffffff"
+                        fontFamily="Verdana, Geneva, sans-serif"
+                      >
+                        M
+                      </text>
+                    </svg>
+                    <span className="sr-only">Max</span>
+                  </a>
                   <a href="#" className="msg-link chat" title="Онлайн чат">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z" />
@@ -244,40 +295,18 @@ export default function StationInformation() {
                   </a>
                 </div>
               </div>
+            </div>
+          </div>
 
-              <div className="reviews-block">
-                <h4 className="reviews-title">Отзывы о нас</h4>
-                <div className="reviews-badges-row">
-                  <a
-                    href="https://yandex.ru/maps/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="review-widget"
-                  >
-                    <img
-                      src="https://img.icons8.com/color/48/yandex-maps.png"
-                      alt="Yandex"
-                    />
-                    <span>Яндекс</span>
-                    <span className="review-rating">4.9 ★</span>
-                    <span className="review-count">(124)</span>
-                  </a>
-                  <a
-                    href="https://maps.google.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="review-widget"
-                  >
-                    <img
-                      src="https://img.icons8.com/color/48/google-maps-new.png"
-                      alt="Google"
-                    />
-                    <span>Google</span>
-                    <span className="review-rating">4.8 ★</span>
-                    <span className="review-count">(86)</span>
-                  </a>
+          <div className="features-strip order-features-strip">
+            <h3 className="features-strip-title">Особенности станции</h3>
+            <div className="features-strip-list">
+              {STATION_FEATURES.map((feature) => (
+                <div className="feature-chip" key={feature.label}>
+                  <span className="feature-chip-icon">{feature.icon}</span>
+                  <span className="feature-chip-label">{feature.label}</span>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
 
